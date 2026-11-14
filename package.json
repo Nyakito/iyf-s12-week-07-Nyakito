@@ -1,0 +1,9 @@
+{
+    "name": "iyf-s12-week-07-nyakito",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "test": "node --test"
+    }
+}

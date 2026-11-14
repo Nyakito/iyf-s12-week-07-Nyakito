@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="A simple to-do list with persistent browser storage."
+        />
+        <title>Week 7 To-Do List</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script type="module" src="./src/app.js"></script>
+    </head>
+    <body>
+        <main class="app">
+            <header class="app__header">
+                <p class="eyebrow">Week 7 project</p>
+                <h1>My to-do list</h1>
+                <p class="app__intro">
+                    Add tasks, track what is complete, and come back to your
+                    list later.
+                </p>
+            </header>
+
+            <form class="todo-form" id="todo-form">
+                <label class="sr-only" for="todo-input">New task</label>
+                <input
+                    id="todo-input"
+                    name="todo"
+                    type="text"
+                    maxlength="200"
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                    required
+                />
+                <button type="submit">Add task</button>
+            </form>
+
+            <section class="todo-panel" aria-labelledby="list-heading">
+                <div class="todo-panel__toolbar">
+                    <h2 id="list-heading">Tasks</h2>
+                    <label class="filter-control" for="todo-filter">
+                        Show
+                        <select id="todo-filter" name="filter">
+                            <option value="all">All</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </label>
+                </div>
+                <ul class="todo-list" id="todo-list"></ul>
+                <p class="empty-state" id="empty-state" hidden>
+                    No tasks here yet. Add one above to get started.
+                </p>
+                <div class="todo-panel__footer">
+                    <p id="todo-count" class="todo-count"></p>
+                    <button
+                        class="text-button"
+                        id="clear-completed"
+                        type="button"
+                    >
+                        Clear completed
+                    </button>
+                </div>
+            </section>
+
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+        </main>
+    </body>
+</html>
